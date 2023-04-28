@@ -3,16 +3,17 @@
 #include "lists.h"
 
 /**
- * Return: the address of the new list or NULL if it failed
- * add_node: adds a new node at the beginning of a list
+  * add_node : adds a new node at the beginning of a list
   * @head: the original linked list
   * @str: the string to add to the node
- */
-
+  *
+  * Return: the address of the new list or NULL if it failed
+  */
 list_t *add_node(list_t **head, const char *str)
 {
         list_t *new = malloc(sizeof(list_t));
-        unsigned int len = 0;
+        unsigned int len;
+	len = 0;
 
         while (str[len])
         len++;
