@@ -9,7 +9,7 @@
  *
  *
  *
- * Return: Always 0.
+ * Return: pointer head.
  */
 
 list_t *add_node(list_t **head, const char *str)
@@ -22,9 +22,9 @@ list_t *add_node(list_t **head, const char *str)
 	len++;
 
 	news = malloc(sizeof(list_t));
-	if (!news){
+	if (!news)
 	return (NULL);
-	}
+	
 
 	news->str = strdup(str);
 	news->len = len;
