@@ -3,36 +3,42 @@
 #include <string.h>
 
 /**
- * add_node - adds a node to the beginning of a linked list
+ * add_node - always adds a node to the beginning of a linked list
  * _strlen - finds the length of  strings
  * @str: find the length of that string
  *
  * Return: It returns the length of that string
  */
-typedef struct list_t {
-    char *str;
-    unsigned int len;
-    struct list_t *next;
-} list_t;
+unsigned int _strlen(char *str)
+{
+	unsigned int fr;
 
-unsigned int strlen(const char *str) {
-    unsigned int len = 0;
-    while (*str++) len++;
-    return len;
+	for (fr = 0; str[fr]; fr++)
+		;
+	return (fr);
 }
+/**
+ * @head: double pointer to a lined list
+ *
+ * Return: returns a pointer to the new node
+ */
+list_t *add_node(list_t **head, const char *str)
+{
+	list_t *news;
 
-list_t *add_node(list_t **head, const char *str) {
-    if (!str) return NULL;
-    list_t *new_list_t = (list_t *) malloc(sizeof(list_t));
-    if (!new_list_t) return NULL;
-    new_list_t->str = strdup(str);
-    if (!new_list_t->str) {
-        free(new_list_t);
-        return NULL;
-    }
-    new_list_t->len = strlen(str);
-    new_list_t->next = *head;
-    *head = new_list_t;
-    return new_list_t;
+	if (str == NULL)
+		return (NULL);
+	news = malloc(sizeof(list_t));
+	if (news == NULL)
+		return (NULL);
+	news->str = strdup(str);
+	if (news->str == NULL)
+	{
+		free(news);
+		return (NULL);
+	}
+	news->len = _strlen(news->str);
+	news->next = *head;
+	*head = news;
+	return (news);
 }
-
