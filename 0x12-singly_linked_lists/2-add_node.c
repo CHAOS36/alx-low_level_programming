@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
-  * add_node - adds a new node at the beginning of a list
+  
   * @head: the original linked list
   * @str: the string to add to the node
   *
@@ -19,7 +19,8 @@ list_t *add_node(list_t **head, const char *str) //add_node - adds a new node at
 	len++;
 
 	new = malloc(sizeof(list_t));
-	return new ? new : NULL; // return NULL if malloc fails
+	if (!new)
+        return (NULL); // return NULL if malloc fails
 
 	new->str = strdup(str);
 	new->len = len;
