@@ -11,11 +11,11 @@
  */
 unsigned int _strlen(char *str)
 {
-	unsigned int fr;
+	unsigned int i;
 
-	for (fr = 0; str[fr]; fr++)
+	for (i = 0; str[i]; i++)
 		;
-	return (fr);
+	return (i);
 }
 /**
  * @head: double pointer to a lined list
@@ -24,21 +24,21 @@ unsigned int _strlen(char *str)
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new;
+	list_t *news;
 
 	if (str == NULL)
 		return (NULL);
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
+	news = malloc(sizeof(list_t));
+	if (news == NULL)
 		return (NULL);
-	new->str = strdup(str);
-	if (new->str == NULL)
+	news->str = strdup(str);
+	if (news->str == NULL)
 	{
-		free(new);
+		free(news);
 		return (NULL);
 	}
-	new->len = _strlen(new->str);
-	new->next = *head;
-	*head = new;
-	return (new);
+	news->len = _strlen(news->str);
+	news->next = *head;
+	*head = news;
+	return (news);
 }
