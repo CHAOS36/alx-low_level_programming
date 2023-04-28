@@ -24,21 +24,21 @@ unsigned int _strlen(char *str)
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *news;
+	list_t *new;
 
 	if (str == NULL)
 		return (NULL);
-	news = malloc(sizeof(list_t));
-	if (news == NULL)
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
 		return (NULL);
-	news->str = strdup(str);
-	if (news->str == NULL)
+	new->str = strdup(str);
+	if (new->str == NULL)
 	{
-		free(news);
+		free(new);
 		return (NULL);
 	}
-	news->len = _strlen(news->str);
-	news->next = *head;
-	*head = news;
-	return (news);
+	new->len = _strlen(new->str);
+	new->next = *head;
+	*head = new;
+	return (new);
 }
