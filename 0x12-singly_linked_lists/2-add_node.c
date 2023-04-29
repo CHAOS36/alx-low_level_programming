@@ -2,6 +2,16 @@
 #include <stdlib.h>
 #include <string.h>
 
+unsigned int _strlen(char *str)
+{
+	unsigned int i;
+
+	for (i = 0; str[i]; i++)
+		;
+	return (i);
+}
+
+
 list_t *add_node(list_t **head, const char *str)
 {
 	if (head == NULL || str == NULL)
