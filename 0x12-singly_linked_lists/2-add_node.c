@@ -20,23 +20,26 @@ unsigned int _strlen(char *str)
  * @head: double pointer to a lined list
  * Return: returns a pointer to the new node
  */
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node(list_t **list, const char *str_val)
 {
-	list_t *news;
+    list_t *new_node;
 
-	if (str == NULL)
-		return (NULL);
-	news = malloc(sizeof(list_t));
-	if (news == NULL)
-		return (NULL);
-	news->str = strdup(str);
-	if (news->str == NULL)
-	{
-		free(news);
-		return (NULL);
-	}
-	news->len = _strlen(news->str);
-	news->next = *head;
-	*head = news;
-	return (news);
+    if (str_val == NULL)
+        return (NULL);
+
+    new_node = malloc(sizeof(list_t));
+    if (new_node == NULL)
+        return (NULL);
+
+    new_node->str = strdup(str_val);
+    if (new_node->str == NULL)
+    {
+        free(new_node);
+        return (NULL);
+    }
+
+    new_node->len = _str_len(new_node->str);
+    new_node->next = *list;
+    *list = new_node;
+    return (new_node);
 }
