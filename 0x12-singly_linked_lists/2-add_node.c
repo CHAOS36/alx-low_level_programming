@@ -6,7 +6,6 @@
  * add_node - always adds a node to the beginning of a linked list
  * _strlen - finds the length of  strings
  * @str: find the length of that string
- *
  * Return: It returns the length of that string
  */
 unsigned int _strlen(char *str)
@@ -19,7 +18,6 @@ unsigned int _strlen(char *str)
 }
 /**
  * @head: double pointer to a lined list
- *
  * Return: returns a pointer to the new node
  */
 list_t *add_node(list_t **head, const char *str)
