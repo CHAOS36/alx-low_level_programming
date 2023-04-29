@@ -5,16 +5,18 @@
  * free_list - frees the allocated memory
  * @head: pointer to the head of the list
  */
+
 void free_list(list_t *head)
 {
  list_t *temper;
 
- while (head)
- {
+while (head)
+{
  temper = head->next;
  free(head->str);
  free(head);
  head = temper;
- }
+}
+
 }
 
