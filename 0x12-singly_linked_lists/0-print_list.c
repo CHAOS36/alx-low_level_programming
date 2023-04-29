@@ -3,7 +3,6 @@
 #include <stdlib.h>
 
 /**
- *
  * print_list - prints all the elements of a linked list
  * @h: pointer to  list_t list to print
  * Return: Returns the number of nodes printed
