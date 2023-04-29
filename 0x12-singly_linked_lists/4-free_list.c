@@ -1,11 +1,9 @@
 #include <stdlib.h>
 #include "lists.h"
 
-/**
- * main - check the code 
- * free_list - frees a linked list
- * @head: list_t list to be freed
- * Return : always 0.
+/** 
+ * free_list - frees the allocated memory
+ * @head: pointer to the head of the list
  */
 void free_list(list_t *head)
 {
