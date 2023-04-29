@@ -5,9 +5,9 @@
 #include <stdlib.h>
 
 
-/*
+/**
  * File: lists.h
- * Auth: Brennan D Baraban
+ * 
  * Desc: Header file containing prototypes and definitions for all functions
  *       and types written in the 0x12-more_singly_linked_lists directory.
  * struct listint_s - struct listint_s
