@@ -7,11 +7,7 @@
  */
 int main(int argc, char *argv[])
 {
-<<<<<<< HEAD
 	int fst, tec, filr, fil;
-=======
-	int fst, tec, filr, flz;
->>>>>>> 02039bf2b54403eb6f50367dd9a2a0c3ae681772
 	char buffer[1024];
 
 	if (argc != 3)
@@ -30,13 +26,10 @@ int main(int argc, char *argv[])
 	}
 	while ((filr = read(fst, buffer, 1024)) > 0)
 	{
-<<<<<<< HEAD
 		fil = write(tec, buffer, filr);
 		if (fil == -1)
-=======
 		flz = write(tec, buffer, filr);
 		if (flz == -1)
->>>>>>> 02039bf2b54403eb6f50367dd9a2a0c3ae681772
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 		}
