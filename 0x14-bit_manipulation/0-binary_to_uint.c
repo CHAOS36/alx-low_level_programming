@@ -2,23 +2,23 @@
 
 /**
  * binary_to_unit - converts a binary number to unsigned int
- * @p: string containig the binary numbers
+ * @b: string containig the binary numbers
  *
  * Return: the converted numbers
  */
 
-unsigned int binary_to_uint(const char *p)
+unsigned int binary_to_uint(const char *b)
 {
 	int k;
 	unsigned int yeye = 0;
 
-	if (!p)
+	if (!b)
 		return (0);
-	for (k = 0; p[k]; p++)
+	for (k = 0; b[k]; k++)
 	{
-		if(b[p] < '0' || b[p] > '1')
+		if(b[k] < '0' || b[k] > '1')
 			return (0);
-		yeye = 2 * yeye +(b[p] - '0');
+		yeye = 2 * yeye +(b[k] - '0');
 	}
 
 	return (yeye);
