@@ -9,17 +9,15 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	int k;
 	unsigned int yeye = 0;
 
 	if (!b)
 		return (0);
-	for (k = 0; b[k]; k++)
+	while (*b)
 	{
-		if(b[k] < '0' || b[k] > '1')
+		if(*b != '0' && *b != '1')
 			return (0);
-		yeye = 2 * yeye +(b[k] - '0');
+		yeye = 2 * yeye + (*b++ - '0');
 	}
-
 	return (yeye);
 }
