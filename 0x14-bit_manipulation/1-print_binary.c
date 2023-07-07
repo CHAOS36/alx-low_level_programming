@@ -1,3 +1,4 @@
+
 #include "main.h"
 
 /**
@@ -6,22 +7,23 @@
  */
 void print_binary(unsigned long int n)
 {
-	int i, count = 0;
-	unsigned long int c;
+	int i, costr = 0;
+	unsigned long int current;
 
 	for (i = 63; i >= 0; i--)
 	{
-		c = n >> i;
+		current = n >> i;
 
-		if (c & 1)
+		if (current & 1)
 		{
 			_putchar('1');
-			count++;
+			costr++;
 		}
-		else if (count)
+		else if (costr)
 			_putchar('0');
 	}
-	if (!count)
+	if (!costr)
 		_putchar('0');
 }
+
 
