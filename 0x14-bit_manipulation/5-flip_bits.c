@@ -11,17 +11,8 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-        unsigned int count = 0;
-        unsigned long int exclusive = n ^ m;
-        unsigned int i;
-        unsigned long int current;
-
-        for (i = 63; i >= 0; i--)
-        {
-                current = exclusive >> i;
-                if (current & 1)
-                        count++;
-        }
-
-        return count;
+	unsigned long int exclusive = n ^ m;
+	unsigned int count = __builtin_popcountl(exclusive);
+	return count;
 }
+
