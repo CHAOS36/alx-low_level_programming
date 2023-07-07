@@ -3,25 +3,24 @@
 /**
  * print_binary - prints the binary equivalent of a decimal number
  * @n: number to print in binary
+ *
+ * Return: void
  */
+
 void print_binary(unsigned long int n)
 {
-	int i, yes = 0;
-	unsigned long int current;
+	int bit = sizeof(n) * 8, kinted = 0;
 
-	for (i = 63; i >= 0; i--)
+	while (bit)
 	{
-		current = n >> i;
-
-		if (current & 1)
+		if (n & 1L << --bit)
 		{
 			_putchar('1');
-			yes++;
+			kinted++;
 		}
-		else if (yes)
+		elseif (kinted)
 			_putchar('0');
 	}
-	if (!yes)
+	if (!kinted)
 		_putchar('0');
 }
-
