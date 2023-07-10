@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		w = write(tod, buffet, r);
+		w = write(tod, buffet, rave);
 		if (tod == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO,
