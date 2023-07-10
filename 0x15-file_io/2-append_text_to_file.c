@@ -25,7 +25,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	coma = open(filename, O_WRONLY | O_APPEND);
 	fr = write(coma, text_content, len);
 
-	if (coma == -1 || w == -1)
+	if (coma == -1 || fr == -1)
 		return (-1);
 
 	close(coma);
