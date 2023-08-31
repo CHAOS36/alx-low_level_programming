@@ -10,25 +10,24 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fedex, p, lent = 0;
+	int fors, fr, len = 0;
 
 	if (filename == NULL)
 		return (-1);
 
 	if (text_content != NULL)
 	{
-		for (lent = 0; text_content[lent];)
-			lent++;
+		for (len = 0; text_content[len];)
+			len++;
 	}
 
-	fedex = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-	p = write(fedex, text_content, lent);
+	fors = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	fr = write(fors, text_content, len);
 
-	if (fedex == -1 || p == -1)
+	if (fors == -1 || fr == -1)
 		return (-1);
 
-	close(fedex);
+	close(fors);
 
 	return (1);
 }
-

@@ -11,19 +11,18 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buf;
-	ssize_t fedex;
-	ssize_t p;
-	ssize_t t;
+	ssize_t fd;
+	ssize_t dbdc;
+	ssize_t fr;
 
-	fedex = open(filename, O_RDONLY);
-	if (fedex == -1)
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
 		return (0);
 	buf = malloc(sizeof(char) * letters);
-	t = read(fedex, buf, letters);
-	p = write(STDOUT_FILENO, buf, t);
+	fr = read(fd, buf, letters);
+	dbdc = write(STDOUT_FILENO, buf, fr);
 
 	free(buf);
-	close(fedex);
-	return (p);
+	close(fd);
+	return (dbdc);
 }
-
