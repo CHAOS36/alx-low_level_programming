@@ -11,7 +11,7 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int coma, fr, len = 0;
+	int koma, fr, len = 0;
 
 	if (filename == NULL)
 		return (-1);
@@ -22,13 +22,14 @@ int append_text_to_file(const char *filename, char *text_content)
 			len++;
 	}
 
-	coma = open(filename, O_WRONLY | O_APPEND);
-	fr = write(coma, text_content, len);
+	koma = open(filename, O_WRONLY | O_APPEND);
+	fr = write(koma, text_content, len);
 
-	if (coma == -1 || fr == -1)
+	if (koma == -1 || fr == -1)
 		return (-1);
 
-	close(coma);
+	close(koma);
 
 	return (1);
 }
+

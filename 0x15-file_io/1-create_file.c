@@ -10,7 +10,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fors, fr, len = 0;
+	int allo, fr, len = 0;
 
 	if (filename == NULL)
 		return (-1);
@@ -21,13 +21,14 @@ int create_file(const char *filename, char *text_content)
 			len++;
 	}
 
-	fors = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-	fr = write(fors, text_content, len);
+	allo = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	fr = write(allo, text_content, len);
 
-	if (fors == -1 || fr == -1)
+	if (allo == -1 || fr == -1)
 		return (-1);
 
-	close(fors);
+	close(allo);
 
 	return (1);
 }
+

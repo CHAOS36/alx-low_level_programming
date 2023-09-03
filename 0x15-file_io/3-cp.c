@@ -33,11 +33,11 @@ char *create_buffer(char *file)
  */
 void close_file(int fd)
 {
-	int cok;
+	int cock;
 
-	cok = close(fd);
+	cock = close(fd);
 
-	if (cok == -1)
+	if (cock == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
@@ -58,7 +58,7 @@ void close_file(int fd)
  */
 int main(int argc, char *argv[])
 {
-	int form, tod, rave, w;
+	int form, tod, rae, w;
 	char *buffet;
 
 	if (argc != 3)
@@ -69,11 +69,11 @@ int main(int argc, char *argv[])
 
 	buffet = create_buffer(argv[2]);
 	form = open(argv[1], O_RDONLY);
-	rave = read(form, buffet, 1024);
+	rae = read(form, buffet, 1024);
 	tod = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
-		if (form == -1 || rave == -1)
+		if (form == -1 || rae == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't read from file %s\n", argv[1]);
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		w = write(tod, buffet, rave);
+		w = write(tod, buffet, rae);
 		if (tod == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO,
@@ -90,10 +90,10 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 
-		rave = read(form, buffet, 1024);
+		rae = read(form, buffet, 1024);
 		tod = open(argv[2], O_WRONLY | O_APPEND);
 
-	} while (rave > 0);
+	} while (rae > 0);
 
 	free(buffet);
 	close_file(form);
