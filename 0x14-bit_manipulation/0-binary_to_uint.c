@@ -9,7 +9,7 @@
 unsigned int binary_to_uint(const char *b)
 {
 	int d;
-	unsigned int decart = 0;
+	unsigned int decarte = 0;
 
 	if (!b)
 		return (0);
@@ -18,8 +18,9 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[d] < '0' || b[d] > '1')
 			return (0);
-		decart = 2 * decart + (b[d] - '0');
+		decarte = 2 * decarte + (b[d] - '0');
 	}
 
-	return (decart);
+	return (decarte);
 }
+
