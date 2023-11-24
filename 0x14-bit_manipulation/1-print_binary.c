@@ -6,22 +6,24 @@
  *
  * Return: void
  */
-
 void print_binary(unsigned long int n)
 {
-	int bite = sizeof(n) * 8, kinter = 0;
+        int bite = sizeof(n) * 8, kinter = 0;
 
-	while (bite)
-	{
-		if (n & 1L << --bite)
-		{
-			_putchar('1');
-			kinter++;
-		}
-		elseif (kinter)
-			_putchar('0');
-	}
-	if (!kinter)
-		_putchar('0');
+    while (bite)
+    {
+            if (n & 1L << --bite)
+            {
+                    putchar('1');
+                    kinter++;
+            }
+            else if (kinter)
+            {
+                    putchar('0');
+            }
+    }
+    if (!kinter)
+    {
+            putchar('0');
+    }
 }
-
